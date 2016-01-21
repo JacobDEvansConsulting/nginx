@@ -1,0 +1,7 @@
+- name: Copy configuration files
+  copy: src={{ item }} dest=/etc/nginx/{{ item }}
+  with_items:
+    - nginx.conf
+  notify: 
+    - restart nginx
+
